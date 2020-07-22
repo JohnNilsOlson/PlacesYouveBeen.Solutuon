@@ -1,0 +1,22 @@
+@using PlacesYouveBeen.Models
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Travel Journal</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+    <h1>Places you've visited:</h1>
+    @if (Model.Count == 0)
+    {
+      <p>You have not added any places to your journal.</p>
+    }
+    <ul>
+    @foreach (Place place in Model)
+    {
+      <li>@place.CityName</li>
+    }
+    </ul>
+  </body>
+</html>
