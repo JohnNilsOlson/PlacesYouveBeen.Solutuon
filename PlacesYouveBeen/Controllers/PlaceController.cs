@@ -23,5 +23,11 @@ namespace PlacesYouveBeen.Controllers
       Place newPlace = new Place(cityName);
       return RedirectToAction("Index");
     }
+    [HttpGet("/places/{Id}")]
+    public ActionResult Show(int Id)
+    {
+      Place foundPlace = Place.Find(Id);
+      return View(foundPlace);
+    }
   }
 }
